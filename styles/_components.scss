@@ -1,0 +1,33 @@
+// Importar variables
+@use "sass:color";
+@import "variables";
+
+
+// Estilos para botones
+.btn {
+    background-color: yellow;
+    color: $blanco;
+    border: none;
+    padding: $espaciado-pequeno $espaciado-mediano;
+    border-radius: $radio-borde;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: color.scale($rojo, $lightness: -10%);
+    }
+}
+
+// Estilos para formularios
+form {
+    display: flex;
+    flex-direction: column;
+    label {
+        margin-bottom: $espaciado-pequeno;
+    }
+    input, textarea {
+        margin-bottom: $espaciado-mediano;
+        padding: $espaciado-pequeno;
+        border: 1px solid #ccc;
+        border-radius: $radio-borde;
+    }
+}

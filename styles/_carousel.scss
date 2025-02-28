@@ -1,0 +1,20 @@
+// Importar variables
+@import "variables";
+
+// Estilos para el carrusel Swiper
+.carousel {
+    margin: $espaciado-grande auto;
+    padding: $espaciado-mediano;
+    .swiper-container {
+        width: 100%;
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+            max-width: 100%;
+            max-height: 300px;
+            }
+        }
+    }
+}

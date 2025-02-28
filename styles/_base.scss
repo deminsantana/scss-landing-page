@@ -1,0 +1,87 @@
+// Importar variables
+@use "sass:color";
+@import "variables";
+
+// Estilos base
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    .top-banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $gris-claro;
+        width: 100%;
+        p {
+            margin-right: $espaciado-pequeno;
+            span {
+                color: $rojo;
+                font-weight: bold;
+            }
+        }
+    }
+  nav {
+      display: flex;
+      justify-content: space-around;
+      a {
+          color: $blanco;
+          text-decoration: none;
+      }
+  }
+}
+
+body {
+    font-family: $fuente-principal;
+    font-size: $tamano-texto;
+    color: $negro;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: $tamano-titulo;
+    margin-bottom: $espaciado-mediano;
+}
+
+h2 {
+    font-size: $tamano-subtitulo;
+    margin-bottom: $espaciado-pequeno;
+}
+
+a {
+    color: $azul;
+    text-decoration: none;
+    transition: $transicion-rapida;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.importante {
+		font-weight: bold;
+}
+
+button {
+    background-color: $rojo;
+    color: $blanco;
+    border: none;
+    padding: $espaciado-pequeno $espaciado-mediano;
+    border-radius: $radio-borde;
+    cursor: pointer;
+    transition: $transicion-rapida;
+    &:hover {
+        background-color: color.scale($rojo, $lightness: -10%);
+    }
+}
+
+footer {
+    background-color: $azul;
+    color: $blanco;
+    text-align: center;
+    padding: $espaciado-mediano 0;
+}
