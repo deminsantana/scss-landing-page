@@ -1,33 +1,162 @@
 // Importar variables
 @use "sass:color";
-@import "variables";
+@use "variables";
 
 
-// Estilos para botones
-.btn {
-    background-color: yellow;
-    color: $blanco;
-    border: none;
-    padding: $espaciado-pequeno $espaciado-mediano;
-    border-radius: $radio-borde;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-        background-color: color.scale($rojo, $lightness: -10%);
+.secure-payment {
+    margin-top: 10px;
+    img {
+        max-width: 150px;
     }
 }
+
+.social-icons {
+    display: flex;
+    a {
+        margin-right: 10px;
+        img {
+            width: 24px;
+        }
+    }
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+
+    img {
+        max-width: 100%;
+        max-height: 50px;
+    }
+
+    &.client-double {
+        grid-column: span 2;
+    }
+}
+
+.card-image {
+    position: relative;
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    .card-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+    }
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+
+    .card-number {
+        background-color: variables.$rojo;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 10px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
 
 // Estilos para formularios
 form {
     display: flex;
     flex-direction: column;
     label {
-        margin-bottom: $espaciado-pequeno;
+        margin-bottom: variables.$espaciado-pequeno;
     }
     input, textarea {
-        margin-bottom: $espaciado-mediano;
-        padding: $espaciado-pequeno;
+        margin-bottom: variables.$espaciado-mediano;
+        padding: variables.$espaciado-pequeno;
         border: 1px solid #ccc;
-        border-radius: $radio-borde;
+        border-radius: variables.$radio-borde;
     }
 }
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    input[type="text"], input[type="email"], input[type="tel"] {
+        width: 48%;
+        padding: 10px;
+        border: none;
+    }
+
+    &.radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+textarea {
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.privacy-text {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+}
+
+.submit-button {
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+// .btn {
+//     background-color: yellow;
+//     color: $blanco;
+//     border: none;
+//     padding: $espaciado-pequeno $espaciado-mediano;
+//     border-radius: $radio-borde;
+//     cursor: pointer;
+//     transition: all 0.3s ease-in-out;
+//     &:hover {
+//         background-color: color.scale($rojo, $lightness: -10%);
+//     }
+// }

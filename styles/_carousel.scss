@@ -1,10 +1,10 @@
 // Importar variables
-@import "variables";
+@use "variables";
 
 // Estilos para el carrusel Swiper
 .carousel {
-    margin: $espaciado-grande auto;
-    padding: $espaciado-mediano;
+    margin: variables.$espaciado-grande auto;
+    padding: variables.$espaciado-mediano;
     .swiper-container {
         width: 100%;
         .swiper-slide {
@@ -12,8 +12,85 @@
             justify-content: center;
             align-items: center;
             img {
-            max-width: 100%;
-            max-height: 300px;
+                max-width: 100%;
+                max-height: 300px;
+            }
+        }
+    }
+}
+
+
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            background: variables.$blanco;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .carousel-content {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 40%;
+                height: 100%;
+                background: linear-gradient(to right, rgba(226, 0, 26, 0.8), transparent);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: variables.$blanco;
+                text-align: left;
+                padding: 20px;
+                h2 {
+                    font-size: 2rem;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 20%;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+            }
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+
+            .swiper-pagination-bullet {
+                width: 10px;
+                height: 10px;
+                background-color: variables.$blanco;
+                opacity: 0.8;
+            }
+
+            .swiper-pagination-bullet-active {
+                opacity: 1;
             }
         }
     }

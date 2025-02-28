@@ -1,25 +1,21 @@
-@import "variables";
-
-body {
-  font-family: $fuente-principal;
-  margin: 0;
-  padding: 0;
-  color: $negro;
-  box-sizing: border-box;
-}
+@use "variables";
 
 // Header
 header {
-  .top-banner {
-    background-color: $rojo;
-    color: white;
+  .header-top-banner {
+    background-color: variables.$rojo;
+    color: variables.$blanco;
     text-align: center;
-    padding: 10px 0;
+    padding: 0;
     font-size: 0.9rem;
     width: 100%;
     margin: 0;
+    height: 30px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background-color: variables.$rojo;
     a {
-      color: white;
+      color: variables.$blanco;
       text-decoration: underline;
     }
   }
@@ -32,11 +28,12 @@ header {
     padding: 20px;
     margin: 0;
 
-    .logo {
+    .logo-header {
       font-size: 2rem;
-      font-weight: bold;
+      font-weight: 900;
+      color: variables.$azul;
       span:last-child {
-        color: $rojo; /* Rojo del signo de exclamación */
+        color: variables.$rojo; /* Rojo del signo de exclamación */
       }
     }
 
@@ -46,8 +43,9 @@ header {
       li {
         margin-left: 20px;
         a {
-          color: $azul;
+          color: variables.$rojo;
           text-decoration: none;
+          font-weight: bold;
         }
       }
     }
@@ -58,6 +56,7 @@ header {
         margin-left: 10px;
         img {
           width: 24px;
+          fill: variables.$rojo;
         }
       }
     }
@@ -71,7 +70,7 @@ header {
   position: relative;
   width: 100%;
   margin: 0;
-  height: 550px; /* Ajusta la altura según sea necesario */
+  height: 550px;
   overflow: hidden;
 
   .swiper {
@@ -82,7 +81,7 @@ header {
       position: relative;
       text-align: center;
       font-size: 18px;
-      background: #fff;
+      background: variables.$blanco;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -104,7 +103,7 @@ header {
         display: flex;
         justify-content: left;
         align-items: center;
-        color: white;
+        color: variables.$blanco;
         text-align: left;
         padding: 5px;
         h2 {
@@ -133,7 +132,7 @@ header {
       .swiper-pagination-bullet {
         width: 10px;
         height: 10px;
-        background-color: white;
+        background-color: variables.$blanco;
         opacity: 0.8;
       }
 
@@ -156,7 +155,7 @@ header {
     width: 48%;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: white;
+    background-color: variables.$blanco;
     border-radius: 10px;
     overflow: hidden;
 
@@ -165,7 +164,7 @@ header {
       top: 10px;
       right: 10px;
       width: 10px;
-      color: white;
+      color: variables.$blanco;
     }
 
     .card-image {
@@ -178,14 +177,15 @@ header {
         position: absolute;
         bottom: 10px;
         left: 10px;
-        background-color: $rojo;
-        color: white;
+        background-color: variables.$blanco;
+        color: variables.$rojo;
         width: 30px;
         height: 30px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-weight: bold;
       }
     }
 
@@ -195,12 +195,12 @@ header {
       h3 {
         font-size: 1.5rem;
         margin-bottom: 10px;
-        color: $azul;
+        color: variables.$azul;
       }
       p {
         font-size: 0.9rem;
         line-height: 1.5;
-        color: $azul;
+        color: variables.$azul;
       }
     }
   }
@@ -221,7 +221,7 @@ header {
 // Passion
 .passion-section {
   position: relative;
-  background: linear-gradient(to bottom, white, $rojo); /* Degradado de blanco a rojo */
+  background: linear-gradient(to bottom, variables.$blanco, variables.$rojo); /* Degradado de blanco a rojo */
   padding: 100px 20px;
   text-align: center;
   overflow: hidden; /* Para que la imagen no genere scroll horizontal */
@@ -236,7 +236,7 @@ header {
     height: 100%;
 
     h2 {
-      color: $blanco; /* Color del texto */
+      color: variables.$blanco; /* Color del texto */
       font-size: 2rem;
       margin-bottom: 20px;
     }
@@ -256,7 +256,7 @@ header {
     transform: translate(-50%);
     width: 100%;
     height: 200%;
-    background-image: url('../assets/images/passion-image.jpg'); /* Misma imagen de fondo */
+    background-image: url('../assets/img/impactacom_Waiter_preparing_a_cocktail_from_which_a_lot_of_smok_39cc6042-3b3e-4264-91e6-3ddbb9f91152.png'); /* Misma imagen de fondo */
     background-size: cover;
     background-position: center;
     opacity: 0.3; /* Ajusta la opacidad para el efecto */
@@ -267,13 +267,13 @@ header {
 
 // Customers
 .clientes {
-  background: linear-gradient(to bottom, white, $rojo); // Degradado de blanco a rojo
+  background: linear-gradient(to bottom, variables.$blanco, variables.$rojo); // Degradado de blanco a rojo
   padding: 40px 20px;
   text-align: center;
 
   h2 {
     margin-bottom: 30px;
-    color: $azul; // Color del texto del título
+    color: variables.$azul; // Color del texto del título
   }
 
   .clientes-grid {
@@ -287,7 +287,7 @@ header {
       align-items: center;
       justify-content: center;
       padding: 10px;
-      background-color: white; // Fondo blanco para los logos
+      background-color: variables.$blanco; // Fondo blanco para los logos
       border-radius: 5px; // Bordes redondeados
 
       img {
@@ -316,8 +316,8 @@ header {
 
 // Contact
 .contact-form {
-  background-color: $rojo; // Rojo del fondo
-  color: white;
+  background-color: variables.$rojo; // Rojo del fondo
+  color: variables.$blanco;
   padding: 20px;
 
   h2 {
@@ -374,8 +374,8 @@ header {
     }
 
     .submit-button {
-      background-color: #ff0; // Amarillo del botón
-      color: black;
+      background-color: variables.$amarillo; // Amarillo del botón
+      color: variables.$negro;
       border: none;
       padding: 10px 20px;
       cursor: pointer;
@@ -386,61 +386,86 @@ header {
 
 // Footer
 footer {
-  background-color: $azul; // Azul oscuro del fondo
-  color: white;
+  position: relative;
+  background-color: variables.$azul;
+  color: variables.$blanco;
   padding: 20px;
 
   .footer-top {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; // Para que se ajuste en pantallas pequeñas
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: variables.$max-width; /* Ajusta el ancho máximo según sea necesario */
+    margin: 0 auto; /* Centra el footer */
+    background-color: variables.$blanco;
+  }
 
-    .footer-section {
-      margin-bottom: 20px;
+  .footer-section {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
 
-      h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 5px;
       }
+    }
 
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-          margin-bottom: 5px;
-        }
+    .secure-payment {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      img {
+        max-width: 24px;
+        margin: 5px;
       }
+    }
 
-      .secure-payment {
-        margin-top: 10px;
+    .social-icons {
+      display: flex;
+      a {
+        margin-right: 10px;
         img {
-          max-width: 150px; // Ajusta el tamaño de los iconos de pago
+          width: 24px;
         }
       }
+    }
 
-      .social-icons {
-        display: flex;
-        a {
-          margin-right: 10px;
-          img {
-            width: 24px; // Ajusta el tamaño de los iconos sociales
-          }
-        }
+    .logo-footer {
+      font-size: 2rem;
+      font-weight: 900;
+      max-height: 40px;
+      color: variables.$blanco;
+      margin-top: 10px;
+      display: inline-block;
+      span:last-child {
+        color: variables.$rojo;
       }
     }
   }
 
   .footer-bottom {
+    background-color: variables.$blanco;
+    height: 30px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2); // Línea divisoria sutil
-
-    img {
-      max-height: 40px; // Ajusta el tamaño del logo de Impacta
+    padding: 0;
+    margin-top: 0;
+    p {
+      color: variables.$rojo;
+      font-size: 0.6rem;
+      margin: 0;
     }
   }
 }
