@@ -1,28 +1,19 @@
 {
-  "name": "test-sellectiallc",
+  "name": "landing-page-marketing",
   "version": "1.0.0",
   "description": "Este proyecto consiste en una página web creada para demostrar mis habilidades técnicas. Se ha desarrollado utilizando HTML, SCSS y JavaScript, sin hacer uso de frameworks como Bootstrap o Tailwind.",
   "main": "index.js",
   "scripts": {
-    "start2": "webpack-dev-server --mode development",
-    "build": "webpack",
+    "sass": "sass styles/main.scss:dist/main.css --watch",
+    "build": "sass styles/main.scss:dist/main.css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile-sass": "sass styles/main.scss:dist/main.css --watch",
     "start": "npx http-server -p 3000"
   },
   "keywords": [],
   "author": "Eng. Demin Santana",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@babel/preset-env": "^7.24.0",
-    "babel-loader": "^9.1.3",
-    "css-loader": "^6.10.0",
-    "sass": "^1.71.1",
-    "sass-loader": "^14.1.1",
-    "style-loader": "^3.3.4",
-    "webpack": "^5.98.0",
-    "webpack-cli": "^5.1.4"
+    "sass": "^1.71.1"
   },
   "dependencies": {
     "http-server": "^14.1.1"

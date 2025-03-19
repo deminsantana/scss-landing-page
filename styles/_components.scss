@@ -24,16 +24,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
+    padding: variables.$espaciado-pequeno;
+    background-color: rgba(255, 40, 40, 0.8) !important;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    margin: 0;
 
     img {
+        width: 70% !important;
+        height: 40px !important;
+        filter: brightness(0) invert(1) !important;
+        transition: variables.$transicion-rapida;
+        object-fit: contain !important;
+        display: inline-block !important;
+        background-color: transparent !important;
         max-width: 100%;
-        max-height: 50px;
     }
 
-    &.client-double {
+    &:hover {
+        background-color: rgba(255, 60, 60, 0.9) !important;
+
+        img {
+            transform: scale(1.05);
+        }
+    }
+
+    &.wide {
         grid-column: span 2;
     }
 }
@@ -160,3 +176,232 @@ textarea {
 //         background-color: color.scale($rojo, $lightness: -10%);
 //     }
 // }
+
+// Botones
+.button {
+  display: inline-block;
+  padding: variables.$espaciado-pequeno variables.$espaciado-mediano;
+  background-color: variables.$rojo;
+  color: variables.$blanco;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: variables.$transicion-rapida;
+
+  &:hover {
+    background-color: variables.$azul;
+  }
+
+  &.button-secondary {
+    background-color: variables.$blanco;
+    color: variables.$rojo;
+
+    &:hover {
+      background-color: variables.$azul;
+      color: variables.$blanco;
+    }
+  }
+}
+
+// Tarjetas
+.card {
+  position: relative;
+  overflow: hidden;
+  background-color: variables.$blanco;
+
+  .card-image {
+    position: relative;
+    height: 200px;
+    background-color: variables.$rojo;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+      transition: variables.$transicion-rapida;
+    }
+
+    .card-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      z-index: 1;
+      filter: brightness(0) invert(1);
+    }
+
+    .card-number {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 30px;
+      height: 30px;
+      background-color: variables.$blanco;
+      color: variables.$rojo;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      z-index: 1;
+    }
+  }
+
+  .card-content {
+    padding: variables.$espaciado-pequeno;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: variables.$espaciado-minimo;
+      color: variables.$azul;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    p {
+      color: variables.$azul;
+      font-size: variables.$tamano-texto;
+      line-height: 1.6;
+    }
+  }
+
+  &:hover {
+    .card-image img {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Formularios
+input,
+textarea,
+select {
+  padding: variables.$espaciado-pequeno;
+  border: 1px solid rgba(variables.$azul, 0.2);
+  background-color: variables.$blanco;
+  width: 100%;
+  font-family: variables.$fuente-principal;
+
+  &:focus {
+    outline: none;
+    border-color: variables.$rojo;
+  }
+}
+
+.radio-selection {
+  margin-bottom: variables.$espaciado-pequeno;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: variables.$espaciado-pequeno;
+  }
+
+  .radio-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: variables.$espaciado-pequeno;
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: variables.$espaciado-minimo;
+
+      input[type="radio"] {
+        width: auto;
+        margin-right: variables.$espaciado-minimo;
+      }
+    }
+  }
+}
+
+.submit-button {
+  background-color: variables.$blanco;
+  color: variables.$rojo;
+  padding: variables.$espaciado-pequeno variables.$espaciado-mediano;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: variables.$transicion-rapida;
+
+  &:hover {
+    background-color: variables.$azul;
+    color: variables.$blanco;
+  }
+}
+
+// Social Icons
+.social-icons {
+  display: flex;
+  gap: variables.$espaciado-pequeno;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 24px !important;
+      height: 24px !important;
+      transition: variables.$transicion-rapida;
+      object-fit: contain;
+      display: inline-block;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Logo Header y Footer
+.logo-header img,
+.logo-footer img {
+  width: 150px !important;
+  height: auto !important;
+  object-fit: contain;
+  display: inline-block;
+}
+
+// Footer Elements
+.payment-icons {
+  display: flex;
+  gap: variables.$espaciado-pequeno;
+
+  img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+    display: inline-block;
+  }
+}
+
+// Banner de información
+.info-banner {
+  background-color: variables.$rojo;
+  color: variables.$blanco;
+  text-align: center;
+  padding: variables.$espaciado-minimo variables.$espaciado-pequeno;
+
+  p {
+    margin: 0;
+    font-size: variables.$tamano-texto-pequeno;
+
+    .importante {
+      font-weight: 700;
+      margin: 0 variables.$espaciado-minimo;
+    }
+
+    a {
+      color: variables.$blanco;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+  }
+}

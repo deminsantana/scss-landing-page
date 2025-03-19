@@ -3,22 +3,26 @@ $azul: #001c3a;
 $rojo: #e2001a;
 $blanco: #ffffff;
 $negro: #000000;
-$gris-claro: gray;
+$gris-claro: #f4f4f4;
+$gris-oscuro: #333333;
 $amarillo: #f7d842;
 
 // Tipografía
 $fuente-principal: 'Outfit', sans-serif;
-$tamano-titulo: 2.5rem;
-$tamano-subtitulo: 1.5rem;
+$tamano-titulo: 3rem;
+$tamano-subtitulo: 1.8rem;
 $tamano-texto: 1rem;
+$tamano-texto-pequeno: 0.875rem;
 
 // Espaciado
-$espaciado-grande: 3rem;
-$espaciado-mediano: 1.5rem;
-$espaciado-pequeno: 0.5rem;
+$espaciado-grande: 4rem;
+$espaciado-mediano: 2rem;
+$espaciado-pequeno: 1rem;
+$espaciado-minimo: 0.5rem;
 
 // Otros
-$radio-borde: 5px;
+$radio-borde: 0;
+$sombra-suave: 0 5px 15px rgba(0, 0, 0, 0.1);
 $transicion-rapida: all 0.3s ease-in-out;
 $max-width: 1200px;
 

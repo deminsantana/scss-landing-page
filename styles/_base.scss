@@ -87,3 +87,30 @@ footer {
     color: variables.$blanco;
     text-align: left;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Regla para asegurar que las imágenes SVG se visualicen correctamente
+svg, img[src$=".svg"] {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+main, section, header, footer, .container {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
