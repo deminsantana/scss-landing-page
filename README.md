@@ -2,7 +2,7 @@
 
 ## 📝 Descripción General
 
-Este proyecto consiste en una página web creada para [describir el propósito de la web]. Se ha desarrollado utilizando HTML, SCSS y JavaScript, sin hacer uso de frameworks como Bootstrap o Tailwind.
+Este proyecto consiste en una página web creada como proyecto personal. Se ha desarrollado utilizando HTML, SCSS y JavaScript, sin hacer uso de frameworks como Bootstrap o Tailwind.
 
 ## 📂 Estructura de Archivos
 
