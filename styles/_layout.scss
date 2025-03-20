@@ -1,4 +1,5 @@
 @use "variables";
+@use "sass:color";
 
 // Header
 header {
@@ -46,7 +47,7 @@ header {
         margin: 0 15px;
 
         a {
-          color: variables.$azul;
+          color: variables.$rojo;
           text-decoration: none;
           font-weight: 500;
           font-size: 0.9rem;
@@ -196,7 +197,7 @@ header {
     font-size: 2rem;
   }
 
-  .services-cards {
+.services-cards {
     display: grid;
     grid-template-columns: repeat(2, 450px);
     gap: 30px;
@@ -204,9 +205,9 @@ header {
     margin: 0 auto;
     justify-content: center;
 
-    .card {
+  .card {
       width: 450px;
-      background-color: variables.$blanco;
+    background-color: variables.$blanco;
       border-radius: 0;
       position: relative;
       overflow: hidden;
@@ -251,45 +252,45 @@ header {
           filter: brightness(0) invert(1); // Icono blanco
         }
 
-        .card-number {
-          position: absolute;
-          bottom: 10px;
-          left: 10px;
+      .card-number {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
           width: 25px;
           height: 25px;
-          background-color: variables.$blanco;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        background-color: variables.$blanco;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
           color: variables.$azul;
-          font-weight: bold;
+        font-weight: bold;
           font-size: 14px;
           z-index: 4;
         }
-      }
+    }
 
-      .card-content {
+    .card-content {
         padding: 30px;
 
         .card-title {
-          color: variables.$azul;
+        color: variables.$azul;
           font-size: 1.4rem;
           margin-bottom: 15px;
           font-weight: 700;
           text-transform: uppercase;
           line-height: 1.3;
-        }
+      }
 
         .card-description {
           color: variables.$gris-oscuro;
-          font-size: 0.9rem;
-          line-height: 1.5;
+        font-size: 0.9rem;
+        line-height: 1.5;
 
           strong {
             font-weight: 700;
-            color: variables.$azul;
-          }
+        color: variables.$azul;
+      }
         }
       }
     }
@@ -472,7 +473,7 @@ header {
           width: 48%;
           padding: 10px;
           border: none;
-          border-radius: 0;
+          border-radius: 8px !important;
           font-size: 14px;
         }
       }
@@ -482,7 +483,7 @@ header {
         height: 150px;
         padding: 10px;
         border: none;
-        border-radius: 0;
+        border-radius: 8px !important;
         margin-bottom: 15px;
         font-size: 14px;
         resize: none;
@@ -520,27 +521,31 @@ header {
             border-radius: 50%;
             margin-right: 10px;
             position: relative;
+            cursor: pointer;
+            z-index: 1;
+            background-color: transparent;
 
             &:checked::after {
               content: "";
               position: absolute;
-              top: 3px;
-              left: 3px;
-              width: 10px;
-              height: 10px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 12px;
+              height: 12px;
               background-color: variables.$blanco;
               border-radius: 50%;
             }
           }
+        }
 
-          label {
-            font-size: 14px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            width: 100%;
-            text-align: center;
-          }
+        label {
+          font-size: 14px;
+          padding: 10px;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 20px;
+          width: 100%;
+          text-align: center;
         }
       }
     }
@@ -565,14 +570,19 @@ header {
           border: 2px solid variables.$blanco;
           margin-right: 10px;
           position: relative;
+          cursor: pointer;
+          z-index: 1;
+          background-color: transparent;
 
           &:checked::after {
             content: "✓";
             position: absolute;
-            top: 0;
-            left: 3px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: variables.$blanco;
             font-size: 16px;
+            line-height: 1;
           }
         }
 
@@ -582,7 +592,7 @@ header {
       }
 
       .submit-button {
-        background-color: variables.$amarillo;
+        background-color: variables.$amarillo !important;
         color: variables.$negro;
         border: none;
         padding: 12px 25px;
@@ -591,6 +601,11 @@ header {
         cursor: pointer;
         text-transform: uppercase;
         font-size: 14px;
+        transition: variables.$transicion-rapida;
+
+        &:hover {
+          background-color: color.adjust(variables.$amarillo, $lightness: 10%) !important;
+        }
       }
     }
   }

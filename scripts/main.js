@@ -8,9 +8,13 @@ const swiper = new Swiper('.swiper', {
 });
 
 // Formulario de contacto
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  alert('¡Mensaje enviado! Gracias por contactarnos.');
-  form.reset();
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('¡Mensaje enviado! Gracias por contactarnos.');
+      form.reset();
+    });
+  }
 });

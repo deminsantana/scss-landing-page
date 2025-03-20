@@ -150,7 +150,7 @@ header nav .nav-links li {
   margin: 0 15px;
 }
 header nav .nav-links li a {
-  color: #001c3a;
+  color: #e2001a;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
@@ -521,7 +521,7 @@ header nav .social-icons a:nth-child(2) {
   width: 48%;
   padding: 10px;
   border: none;
-  border-radius: 0;
+  border-radius: 8px !important;
   font-size: 14px;
 }
 .contact-form form .form-left textarea {
@@ -529,7 +529,7 @@ header nav .social-icons a:nth-child(2) {
   height: 150px;
   padding: 10px;
   border: none;
-  border-radius: 0;
+  border-radius: 8px !important;
   margin-bottom: 15px;
   font-size: 14px;
   resize: none;
@@ -562,18 +562,22 @@ header nav .social-icons a:nth-child(2) {
   border-radius: 50%;
   margin-right: 10px;
   position: relative;
+  cursor: pointer;
+  z-index: 1;
+  background-color: transparent;
 }
 .contact-form form .form-right .radio-options .radio-option input[type=radio]:checked::after {
   content: "";
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 10px;
-  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
   background-color: #ffffff;
   border-radius: 50%;
 }
-.contact-form form .form-right .radio-options .radio-option label {
+.contact-form form .form-right .radio-options label {
   font-size: 14px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -601,20 +605,25 @@ header nav .social-icons a:nth-child(2) {
   border: 2px solid #ffffff;
   margin-right: 10px;
   position: relative;
+  cursor: pointer;
+  z-index: 1;
+  background-color: transparent;
 }
 .contact-form form .form-footer .privacy-check input[type=checkbox]:checked::after {
   content: "✓";
   position: absolute;
-  top: 0;
-  left: 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #ffffff;
   font-size: 16px;
+  line-height: 1;
 }
 .contact-form form .form-footer .privacy-check label {
   font-size: 13px;
 }
 .contact-form form .form-footer .submit-button {
-  background-color: #f7d842;
+  background-color: #f7d842 !important;
   color: #000000;
   border: none;
   padding: 12px 25px;
@@ -623,6 +632,10 @@ header nav .social-icons a:nth-child(2) {
   cursor: pointer;
   text-transform: uppercase;
   font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+.contact-form form .form-footer .submit-button:hover {
+  background-color: rgb(249.0710659898, 226.0964467005, 114.9289340102) !important;
 }
 @media (max-width: 768px) {
   .contact-form form {
